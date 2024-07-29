@@ -1,0 +1,67 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light pastel background color */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 800px; /* Center content and limit width */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1, h2 {
+  color: #333;
+}
+
+button {
+  background-color: #a0c4ff; /* Pastel blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #7fa0ff; /* Darker pastel blue */
+}
+
+input[type="text"], input[type="date"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: calc(100% - 22px); /* Full width minus padding and border */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #e2e8f0; /* Light pastel grey */
+  border: 1px solid #d1d5db; /* Slightly darker border */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #d1d5db; /* Slightly darker on hover */
+}

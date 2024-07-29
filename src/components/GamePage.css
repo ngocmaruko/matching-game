@@ -1,0 +1,33 @@
+/* GamePage.css */
+
+.game-page {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.game-page .column {
+  width: 45%;
+}
+
+.game-page h2 {
+  margin-bottom: 10px;
+}
+
+.game-page ul {
+  padding: 0;
+}
+
+.game-page li {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.game-page li.selected {
+  background-color: #b3e5fc;
+}
