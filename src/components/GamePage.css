@@ -1,33 +1,80 @@
 /* GamePage.css */
 
-.game-page {
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  height: 100%; /* Full height for body and html */
+}
+
+.game-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 20px;
+  padding: 20px;
+  max-width: 1200px; /* Optional: limit the maximum width */
+  margin: 0 auto; /* Center the container */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  height: calc(100vh - 40px); /* Adjust height to fit within viewport minus padding */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
 
-.game-page .column {
-  width: 45%;
+.column {
+  flex: 1; /* Allow columns to grow equally */
+  margin: 0 10px; /* Add margin between columns */
+  min-width: 200px; /* Ensure columns have a minimum width */
+  background-color: #ffffff; /* White background for the columns */
+  border: 1px solid #ddd; /* Border to distinguish columns */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a nice effect */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  overflow: hidden; /* Hide overflow within the columns */
 }
 
-.game-page h2 {
-  margin-bottom: 10px;
+h2 {
+  color: #4a90e2; /* Friendly blue color for headings */
+  font-size: 1.5rem; /* Slightly larger font size for better readability */
+  margin-bottom: 10px; /* Space below the heading */
 }
 
-.game-page ul {
+ul {
+  list-style: none;
   padding: 0;
+  margin: 0; /* Remove default margins */
+  overflow: auto; /* Allow vertical scrolling within the list if needed */
+  flex: 1; /* Allow list to grow and shrink */
+  display: flex;
+  flex-direction: column; /* Stack list items vertically */
 }
 
-.game-page li {
-  cursor: pointer;
+li {
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
   padding: 10px;
-  border: 1px solid #ddd;
   margin: 5px 0;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff; /* White background for list items */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  height: 50px; /* Fixed height for consistent sizing */
+  text-align: center; /* Center text horizontally */
 }
 
-.game-page li.selected {
-  background-color: #b3e5fc;
+li:hover {
+  background-color: #e0f7fa; /* Light blue on hover */
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+    height: auto; /* Allow height to be auto on smaller screens */
+  }
+
+  .column {
+    margin: 10px 0; /* Add vertical margin for stacked columns */
+  }
 }

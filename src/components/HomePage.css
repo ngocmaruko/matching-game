@@ -1,0 +1,23 @@
+/* HomePage Styles */
+.HomePage {
+  max-width: 800px;
+  width: 100%;
+}
+
+.HomePage h1 {
+  margin-bottom: 20px;
+}
+
+.HomePage button {
+  margin-bottom: 20px;
+}
+
+.HomePage ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomePage li {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

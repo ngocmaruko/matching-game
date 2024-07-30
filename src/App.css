@@ -1,67 +1,84 @@
 /* App.css */
 
+/* Base styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa; /* Light pastel background color */
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  background-color: #f0f8ff; /* Light pastel background */
+  color: #333; /* Dark text for contrast */
 }
 
 .App {
-  width: 100%;
-  max-width: 800px; /* Center content and limit width */
-  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
   padding: 20px;
-  background-color: #ffffff; /* White background for content */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 h1, h2 {
-  color: #333;
+  color: #4a90e2; /* Friendly blue color */
 }
 
 button {
-  background-color: #a0c4ff; /* Pastel blue */
-  border: none;
+  background-color: #4a90e2; /* Matching button color */
   color: white;
+  border: none;
   padding: 10px 20px;
+  font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  margin: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #7fa0ff; /* Darker pastel blue */
-}
-
-input[type="text"], input[type="date"] {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin: 5px 0;
-  width: calc(100% - 22px); /* Full width minus padding and border */
+  background-color: #357abd; /* Slightly darker shade on hover */
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 li {
-  background-color: #e2e8f0; /* Light pastel grey */
-  border: 1px solid #d1d5db; /* Slightly darker border */
-  margin: 5px 0;
   padding: 10px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
 }
 
 li:hover {
-  background-color: #d1d5db; /* Slightly darker on hover */
+  background-color: #e0f7fa; /* Light blue on hover */
 }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  li {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+

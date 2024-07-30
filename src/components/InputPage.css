@@ -1,24 +1,23 @@
-/* InputPage.css */
-
-.input-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* InputPage Styles */
+.InputPage {
+  max-width: 600px;
+  width: 100%;
 }
 
-.input-page h1 {
-  margin-bottom: 20px;
+.InputPage label {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.input-page label {
-  margin: 10px 0;
-}
-
-.input-page ul {
+.InputPage button {
   margin-top: 20px;
-  padding: 0;
 }
 
-.input-page li {
-  background-color: #e0e0e0;
+.InputPage ul {
+  margin-top: 20px;
+}
+
+.InputPage li {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import InputPage from './components/InputPage';
 import GamePage from './components/GamePage';
 import HomePage from './components/HomePage';
-import './App.css'
+import './App.css';
 
 function App() {
   const [wordsByDate, setWordsByDate] = useState(() => {
@@ -11,22 +11,30 @@ function App() {
     return savedWords ? JSON.parse(savedWords) : {};
   });
   const [currentWords, setCurrentWords] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     localStorage.setItem('wordsByDate', JSON.stringify(wordsByDate));
   }, [wordsByDate]);
 
+  useEffect(() => {
+    if (selectedDate) {
+      setCurrentWords(wordsByDate[selectedDate] || []);
+    } else {
+      setCurrentWords(Object.values(wordsByDate).flat());
+    }
+  }, [selectedDate, wordsByDate]);
+
   const handleAddWords = (date, newWords) => {
-    const allWords = wordsByDate[date] ? [...wordsByDate[date], ...newWords] : newWords;
     setWordsByDate(prev => ({
       ...prev,
-      [date]: allWords
+      [date]: (prev[date] || []).concat(newWords)
     }));
-    setCurrentWords(allWords); // Update currentWords with all words
+    setSelectedDate(null); // Reset to show all words when navigating from input page
   };
 
   const handleSelectDate = (date) => {
-    setCurrentWords(wordsByDate[date] || []);
+    setSelectedDate(date);
   };
 
   return (

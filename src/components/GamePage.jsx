@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './GamePage.css'
+import './GamePage.css';
 
 function GamePage({ words }) {
   const [englishWords, setEnglishWords] = useState([]);
@@ -46,19 +46,15 @@ function GamePage({ words }) {
   return (
     <div>
       <h1>Matching Game</h1>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <div>
+      <div className="game-container">
+        <div className="column">
           <h2>English Words</h2>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
+          <ul>
             {englishWords.map((word, index) => (
               <li
                 key={index}
                 onClick={() => handleSelectEnglish(word)}
                 style={{
-                  cursor: 'pointer',
-                  padding: '10px',
-                  border: '1px solid #ddd',
-                  margin: '5px',
                   backgroundColor: selectedEnglish === word ? '#e0e0e0' : 'white'
                 }}
               >
@@ -67,18 +63,14 @@ function GamePage({ words }) {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="column">
           <h2>Japanese Words</h2>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
+          <ul>
             {japaneseWords.map((word, index) => (
               <li
                 key={index}
                 onClick={() => handleSelectJapanese(word)}
                 style={{
-                  cursor: 'pointer',
-                  padding: '10px',
-                  border: '1px solid #ddd',
-                  margin: '5px',
                   backgroundColor: selectedJapanese === word ? '#e0e0e0' : 'white'
                 }}
               >
